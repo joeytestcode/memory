@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:memory/item_adapter.dart';
+import 'package:provider/provider.dart';
 
 import 'myhome.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+      create: (context) => ItemAdapter(), child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {

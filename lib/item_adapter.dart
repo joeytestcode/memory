@@ -7,14 +7,24 @@ class ItemAdapter with ChangeNotifier {
   final List<Item> _list = [];
   Item get currentItem => _list.first;
 
-  Future<void> modifyOrders() {
-    Completer<void> _completer = Completer<void>();
-
-    return _completer.future;
+  ItemAdapter() {
+    loadItems();
   }
 
-  Future<void> loadItems() async {
+  void modifyOrders() {
+    _list.add(_list.removeAt(0));
+    notifyListeners();
+  }
+
+  void loadItems() async {
+    _testItem();
     // todo : complete the method
     notifyListeners();
+  }
+
+  void _testItem() {
+    _list.add(Item('School', '학교'));
+    _list.add(Item('test', '시험'));
+    _list.add(Item('TV', '테레비'));
   }
 }
