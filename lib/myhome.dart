@@ -3,8 +3,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:memory/item_adapter.dart';
 import 'package:provider/provider.dart';
 
-import 'Strings.dart';
-import 'item.dart';
+import 'strings.dart';
 
 class MyHome extends StatelessWidget {
   const MyHome({super.key});
