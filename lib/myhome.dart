@@ -39,16 +39,18 @@ class _MyBody extends StatefulWidget {
 class _MyBodyState extends State<_MyBody> {
   @override
   Widget build(BuildContext context) {
-    String text = widget.items.currentItem.lang1;
+    String text = widget.items.currentItem.lang1.toString();
     return GestureDetector(
-      onTapDown: (details) {
+      onLongPressDown: (details) {
         setState(() {
-          text = widget.items.currentItem.lang2;
+          text = widget.items.currentItem.lang2.toString();
+          print(text);
         });
       },
-      onTapUp: (details) {
+      onLongPressEnd: (details) {
         setState(() {
-          text = widget.items.currentItem.lang1;
+          text = widget.items.currentItem.lang1.toString();
+          print(text);
         });
       },
       child: Center(
