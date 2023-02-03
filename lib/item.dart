@@ -1,6 +1,8 @@
 import 'dart:convert';
 
-class Item {
+import 'package:equatable/equatable.dart';
+
+class Item extends Equatable {
   late final String lang1;
   late final String lang2;
   int level = 4;
@@ -26,4 +28,7 @@ class Item {
   String getSearchString() {
     return [lang1, lang2].toString();
   }
+
+  @override
+  List<Object?> get props => [lang1];
 }
